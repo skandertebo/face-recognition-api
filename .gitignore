@@ -20,6 +20,7 @@ site_build
 venv
 docs.zip
 archive.zip
+ignorables
 
 # vim temporary files
 *~
