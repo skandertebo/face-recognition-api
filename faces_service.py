@@ -9,6 +9,7 @@ import face_recognition
 import numpy as np
 
 def load_image_from_url(url):
+    print("Loading Image from URL {}".format(url))
     """
     Load an image from a URL and convert it to a file object.
 
@@ -23,7 +24,7 @@ def load_image_from_url(url):
     image = Image.open(BytesIO(response.content))
     return image
 
-def convert_image_to_file_object(image):
+def convert_image_to_file_object(image: Image.Image):
     """
     Convert a PIL Image object to a file-like object.
 
@@ -34,7 +35,7 @@ def convert_image_to_file_object(image):
     io.BytesIO: A file-like object containing the image data.
     """
     img_byte_arr = BytesIO()
-    image.save(img_byte_arr, format='JPEG')
+    image.save(img_byte_arr, format='PNG')
     img_byte_arr.seek(0)
     return img_byte_arr
 
